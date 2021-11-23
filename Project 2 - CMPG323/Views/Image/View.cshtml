@@ -1,0 +1,38 @@
+﻿@model Project_2___CMPG323.Models.Image
+
+@{
+    ViewBag.Title = "View";
+}
+
+<h2>View</h2>
+
+<div>
+    <h4>Galary</h4>
+    <hr />
+    <div>
+        <input type="text" placeholder="Search" />
+        <input type="submit" value="Search" class="btn btn-primary" />
+    </div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImagePath)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImagePath)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ImageID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

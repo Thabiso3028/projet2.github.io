@@ -1,0 +1,69 @@
+﻿@model Project_2___CMPG323.Models.UserLogin
+
+@{
+	ViewBag.Title = "Login";
+}
+
+
+<head>
+	<link href="~/Content/myStyle.css" type="text/css" rel="stylesheet" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+
+<div class="login_div">
+	<h2 font-family:"Shippori Antique B1', sans-serif;">Login</h2>
+	@using (Html.BeginForm())
+	{
+		@Html.AntiForgeryToken()
+
+		<div class="form-horizontal">
+			<hr />
+			@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+			<div class="form-group">
+				@Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+				<div class="col-md-10">
+					@Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+				</div>
+			</div>
+
+			<div class="form-group">
+				@Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+				<div class="col-md-10">
+					@Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+				</div>
+			</div>
+
+			<div class="form-group">
+				@Html.LabelFor(model => model.RememberMe, htmlAttributes: new { @class = "control-label col-md-2" })
+				<div class="col-md-10">
+					<div class="checkbox">
+						@Html.EditorFor(model => model.RememberMe)
+						@Html.ValidationMessageFor(model => model.RememberMe, "", new { @class = "text-danger" })
+					</div>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="col-md-offset-2 col-md-10">
+					<input type="submit" value="Login" class="btn btn-primary" />
+				</div>
+			</div>
+		</div>
+	}
+	<div>
+		@Html.ActionLink("Don't have account? Click here to sign up", "Registration")
+	</div>
+
+	@section Scripts{
+		<script src="~/Scripts/jquery.validate.min.js"></script>
+		<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+	}
+</div>
+
+
+
+

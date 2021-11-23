@@ -1,0 +1,23 @@
+﻿body {
+	background-image: url(AdobeStock_116671774_Preview.jpeg);
+	background-repeat: repeat;
+	background-color: #cccccc;
+}
+.login_div{
+	position: absolute;
+	left: 40%;
+	top: 20%;
+	border: 1px solid #ccc;
+	padding: 10px 40px;
+	
+}
+.reg_div {
+	position: absolute;
+	left: 40%;
+	top: 20%;
+	border: 1px solid #ccc;
+	padding: 10px 50px;
+}
+.font {
+	
+}
